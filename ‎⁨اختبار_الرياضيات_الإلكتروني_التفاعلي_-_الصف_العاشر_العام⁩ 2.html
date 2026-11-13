@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>اختبار الرياضيات الإلكتروني - الصف العاشر العام | مجمع زايد التعليمي - الخران</title>
+  
+  <!-- خطوط عربية عصرية وواضحة -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- KaTeX لعرض المعادلات الرياضية بدقة عالية وسرعة فائقة -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMath()"></script>
+
+  <style>
+    :root {
+      --primary: #0f4c81;
+      --primary-light: #1e6bb8;
+      --gold: #c59b27;
+      --bg-light: #f4f7fb;
+    }
+
+    body {
+      font-family: 'Cairo', 'Tajawal', sans-serif;
+      background-color: var(--bg-light) !important;
+      color: #1e293b !important;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ضبط اتجاه المعادلات الرياضية داخل النص العربي */
+    .katex {
+      direction: ltr !important;
+      unicode-bidi: isolate;
+      font-size: 1.15em;
+      font-weight: 600;
+    }
+
+    .math-block {
+      direction: ltr;
+      text-align: center;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      margin: 0.75rem 0;
+      font-size: 1.25rem;
+      color: #0f172a;
+      box-shadow: inset 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    .option-card {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .option-card:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px -3px rgba(15, 76, 129, 0.12);
+    }
+
+    /* شريط التمرير المخصص */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #e2e8f0;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #94a3b8;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between bg-[#f4f7fb] text-slate-800">
+
+  <!-- الترويسة الرسمية لوزارة التربية والتعليم ومجمع زايد التعليمي -->
+  <header class="bg-gradient-to-l from-[#0a365c] via-[#0f4c81] to-[#165b99] text-white shadow-lg border-b-4 border-[#c59b27]">
+    <div class="max-w-5xl mx-auto px-4 py-4">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-3 text-center md:text-right">
+          <div class="w-12 h-12 rounded-xl bg-white/15 backdrop-blur-sm border border-white/25 flex items-center justify-center shrink-0 shadow-inner">
+            <svg class="w-7 h-7 text-[#f3d06b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="text-xs text-blue-200 font-semibold tracking-wide">دولة الإمارات العربية المتحدة • وزارة التربية والتعليم</p>
+            <h1 class="text-lg md:text-xl font-extrabold text-white">مجمع زايد التعليمي - الخران</h1>
+            <p class="text-xs md:text-sm text-amber-200 font-medium">الاختبار الإلكتروني الشامل لهيكل الرياضيات • الصف العاشر العام (الفصل الأول)</p>
+          </div>
+        </div>
+        
+        <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-2 text-center md:text-left shrink-0">
+          <p class="text-xs text-blue-100">إعداد وإشراف معلمة المادة</p>
+          <p class="text-sm font-bold text-white">أ. خديجة أحمد علي</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- المحتوى الرئيسي -->
+  <main class="flex-grow max-w-4xl w-full mx-auto px-4 py-6">
+    
+    <!-- شاشة البداية وتعليمات الاختبار -->
+    <div id="start-screen" class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden">
+      <div class="bg-slate-50 border-b border-slate-200 px-6 py-4 flex items-center justify-between">
+        <span class="inline-flex items-center gap-2 text-sm font-bold text-[#0f4c81]">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          جاهز للتطبيق الإلكتروني • العام الدراسي 2026 - 2027
+        </span>
+        <span class="text-xs font-semibold bg-amber-100 text-amber-800 px-3 py-1 rounded-full border border-amber-200">
+          20 ناتج تعلم (Q1 - Q20)
+        </span>
+      </div>
+
+      <div class="p-6 md:p-8 space-y-6">
+        <div class="text-center space-y-2">
+          <h2 class="text-2xl font-extrabold text-slate-800">مرحباً بك في بوابة التقييم الإلكتروني</h2>
+          <p class="text-slate-600 text-sm md:text-base max-w-2xl mx-auto">
+            تم تصميم هذا الاختبار وفق مواصفات هيكل نهاية الفصل الدراسي الأول لمادة الرياضيات، ويقدم لك تغذية راجعة تشخيصية فورية لكل سؤال بناءً على المعايير الوزارية للتقييم والقياس.
+          </p>
+        </div>
+
+        <!-- إدخال اسم الطالب -->
+        <div class="max-w-md mx-auto bg-blue-50/70 p-4 rounded-xl border border-blue-100">
+          <label for="student-name" class="block text-sm font-bold text-slate-700 mb-1.5">اسم الطالب / الطالبة (اختياري لطباعة التقرير):</label>
+          <input type="text" id="student-name" placeholder="أدخل اسمك الثلاثي هنا..." 
+                 class="w-full px-4 py-2.5 rounded-lg border border-slate-300 bg-white text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0f4c81] focus:border-transparent text-sm">
+        </div>
+
+        <!-- بطاقات معلومات الاختبار -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-center">
+            <div class="text-2xl font-extrabold text-[#0f4c81]">20</div>
+            <div class="text-xs font-bold text-slate-600 mt-1">سؤالاً موضوعياً شاملاً</div>
+          </div>
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-center">
+            <div class="text-2xl font-extrabold text-emerald-600">فورية</div>
+            <div class="text-xs font-bold text-slate-600 mt-1">تغذية راجعة وتصحيح مقنن</div>
+          </div>
+          <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-center">
+            <div class="text-2xl font-extrabold text-amber-600">مسموح</div>
+            <div class="text-xs font-bold text-slate-600 mt-1">باستخدام الآلة الحاسبة العلمية</div>
+          </div>
+        </div>
+
+        <div class="pt-2 text-center">
+          <button onclick="startQuiz()" 
+                  class="inline-flex items-center justify-center gap-2 bg-[#0f4c81] hover:bg-[#0a365c] text-white font-bold text-base px-8 py-3.5 rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer">
+            <span>ابدأ الاختبار الآن</span>
+            <svg class="w-5 h-5 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- شاشة الاختبار التفاعلي -->
+    <div id="quiz-screen" class="hidden space-y-5">
+      
+      <!-- شريط التقدم والمؤشرات -->
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+          <div class="flex items-center gap-2">
+            <span id="q-badge" class="bg-[#0f4c81] text-white text-xs font-bold px-3 py-1 rounded-lg">السؤال 1 من 20</span>
+            <span id="outcome-tag" class="bg-blue-50 text-[#0f4c81] border border-blue-200 text-xs font-bold px-3 py-1 rounded-lg">ناتج التعلم Q1</span>
+          </div>
+          <div class="flex items-center gap-3 text-xs font-bold">
+            <span class="text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">الإجابات الصحيحة: <span id="score-counter">0</span></span>
+            <span class="text-slate-600 bg-slate-100 px-2.5 py-1 rounded-md border border-slate-200" id="timer-display">00:00</span>
+          </div>
+        </div>
+        
+        <!-- شريط التقدم المرئي -->
+        <div class="w-full bg-slate-200 rounded-full h-2.5 overflow-hidden">
+          <div id="progress-bar" class="bg-gradient-to-l from-[#0f4c81] to-emerald-500 h-2.5 rounded-full transition-all duration-300" style="width: 5%"></div>
+        </div>
+
+        <!-- شريط التنقل السريع بين الأسئلة -->
+        <div id="question-nav-dots" class="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-slate-100 justify-center">
+          <!-- يتم توليد الأزرار برمجياً -->
+        </div>
+      </div>
+
+      <!-- بطاقة السؤال -->
+      <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden">
+        <div class="p-6 md:p-7">
+          <!-- نص السؤال -->
+          <div class="mb-5">
+            <h3 id="question-text" class="text-lg md:text-xl font-bold text-slate-800 leading-relaxed"></h3>
+            <div id="question-math" class="math-block hidden"></div>
+          </div>
+
+          <!-- زر التلميح -->
+          <div class="mb-5">
+            <button id="hint-btn" onclick="toggleHint()" 
+                    class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-3 py-1.5 rounded-lg transition-colors cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+              <span>إظهار تلميح إرشادي</span>
+            </button>
+            <div id="hint-box" class="hidden mt-2.5 p-3 rounded-xl bg-amber-50/80 border border-amber-200 text-amber-900 text-sm"></div>
+          </div>
+
+          <!-- الخيارات الأربعة -->
+          <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+            <!-- يتم توليد الخيارات برمجياً -->
+          </div>
+
+          <!-- صندوق التغذية الراجعة المقننة -->
+          <div id="feedback-box" class="hidden mt-6 rounded-xl p-4 border-2 transition-all">
+            <div class="flex items-start gap-3">
+              <div id="feedback-icon" class="mt-0.5 shrink-0"></div>
+              <div class="space-y-1.5">
+                <h4 id="feedback-title" class="font-extrabold text-base"></h4>
+                <p id="feedback-text" class="text-sm leading-relaxed"></p>
+                <div id="feedback-standard" class="text-xs font-semibold pt-1 opacity-85"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- أزرار التحكم السفلية -->
+        <div class="bg-slate-50 px-6 py-4 border-t border-slate-200 flex items-center justify-between">
+          <button id="prev-btn" onclick="prevQuestion()" 
+                  class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-slate-300 bg-white text-slate-700 font-bold text-sm hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+            <span>السابق</span>
+          </button>
+
+          <button id="next-btn" onclick="nextQuestion()" 
+                  class="inline-flex items-center gap-1.5 px-6 py-2.5 rounded-xl bg-[#0f4c81] text-white font-bold text-sm hover:bg-[#0a365c] shadow-sm transition-colors cursor-pointer">
+            <span id="next-btn-text">السؤال التالي</span>
+            <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- شاشة التقرير الختامي والتقييم الوزاري -->
+    <div id="result-screen" class="hidden space-y-6">
+      <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden">
+        <div class="bg-gradient-to-l from-[#0a365c] to-[#0f4c81] text-white p-6 text-center">
+          <p class="text-xs text-amber-300 font-bold mb-1">بطاقة الأداء والتغذية الراجعة الختامية</p>
+          <h2 id="result-student-name" class="text-2xl font-extrabold">تقرير إنجاز الطالب</h2>
+          <p class="text-xs text-blue-100 mt-1">مجمع زايد التعليمي - الخران | الصف العاشر العام</p>
+        </div>
+
+        <div class="p-6 md:p-8 space-y-6">
+          <!-- ملخص الدرجة ومستوى الإتقان الوزاري -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+            <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 text-center">
+              <p class="text-xs font-bold text-slate-500 mb-1">النتيجة النهائية</p>
+              <div class="text-4xl font-extrabold text-[#0f4c81]"><span id="final-score">0</span> <span class="text-lg text-slate-400">/ 20</span></div>
+              <p id="final-percentage" class="text-sm font-bold text-emerald-600 mt-1">0%</p>
+            </div>
+
+            <div class="md:col-span-2 bg-blue-50/60 border border-blue-200 rounded-2xl p-5 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold text-slate-500">مستوى الإتقان وفق معايير التقييم الوزارية:</span>
+                <span id="mastery-badge" class="text-xs font-extrabold px-3 py-1 rounded-full"></span>
+              </div>
+              <h3 id="mastery-title" class="text-lg font-extrabold text-slate-800"></h3>
+              <p id="mastery-advice" class="text-sm text-slate-600 leading-relaxed"></p>
+            </div>
+          </div>
+
+          <!-- تحليل الأداء حسب نواتج التعلم -->
+          <div>
+            <h4 class="text-base font-extrabold text-slate-800 mb-3 flex items-center gap-2">
+              <span class="w-1.5 h-5 bg-[#c59b27] rounded-full"></span>
+              التقرير التشخيصي التفصيلي لنواتج التعلم (Q1 - Q20)
+            </h4>
+            <div id="detailed-report" class="space-y-2.5 max-h-96 overflow-y-auto pr-1">
+              <!-- يتم توليد تفاصيل كل سؤال برمجياً -->
+            </div>
+          </div>
+
+          <!-- أزرار الإجراءات -->
+          <div class="flex flex-wrap items-center justify-center gap-3 pt-4 border-t border-slate-200">
+            <button onclick="restartQuiz()" 
+                    class="inline-flex items-center gap-2 bg-[#0f4c81] hover:bg-[#0a365c] text-white font-bold text-sm px-6 py-3 rounded-xl shadow transition-all cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+              </svg>
+              <span>إعادة الاختبار للتدريب</span>
+            </button>
+            <button onclick="window.print()" 
+                    class="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-bold text-sm px-6 py-3 rounded-xl shadow-sm transition-all cursor-pointer">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+              </svg>
+              <span>طباعة / حفظ التقرير PDF</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- التذييل -->
+  <footer class="bg-white border-t border-slate-200 py-3.5 text-center text-xs text-slate-500">
+    <p>مجمع زايد التعليمي - الخران • قسم الرياضيات • إشراف المعلمة: <span class="font-bold text-slate-700">خديجة أحمد علي</span></p>
+  </footer>
+
+  <script>
+    // بنك الأسئلة الشامل لجميع نواتج التعلم العشرين (Q1 - Q20) وفق المذكرة المرفقة
+    const quizData = [
+      {
+        qNum: 1,
+        outcome: "Q1: ضرب ذوات الحدين باستخدام طريقة FOIL",
+        standard: "المعيار: تطبيق خاصية التوزيع وضرب ذوات الحدين وتجميع الحدود المتشابهة بدقة.",
+        text: "أوجد ناتج ضرب ذوات الحدين الآتية باستخدام طريقة FOIL في أبسط صورة:",
+        math: "$(8h - 1)(2h - 3)$",
+        hint: "اضرب الأول في الأول، والطرفين، والوسطين، والأخير في الأخير، وانتبه لإشارة ضرب (-1) × (-3).",
+        options: [
+          {
+            text: "$16h^{2} - 26h + 3$",
+            isCorrect: true,
+            rationale: "إجابة متقنة! ناتج الطرفين $-24h$ والوسطين $-2h$ ومجموعهما $-26h$، وضرب السالب في السالب يعطي $+3$."
+          },
+          {
+            text: "$16h^{2} - 26h - 3$",
+            isCorrect: false,
+            rationale: "انتبه لقاعدة الإشارات عند ضرب الحدين الأخيرين: $(-1) \\times (-3) = +3$ وليس $-3$."
+          },
+          {
+            text: "$16h^{2} - 22h + 3$",
+            isCorrect: false,
+            rationale: "حدث خطأ عند جمع الحدين الأوسطين؛ فمجموع $-24h + (-2h)$ يساوي $-26h$ وليس $-22h$."
+          },
+          {
+            text: "$10h^{2} - 26h + 3$",
+            isCorrect: false,
+            rationale: "في الخطوة الأولى (F) نضرب المعاملات $8 \\times 2 = 16$ ولا نجمعها."
+          }
+        ]
+      },
+      {
+        qNum: 2,
+        outcome: "Q2: إيجاد ناتج مربع تعبير ذي حدين",
+        standard: "المعيار: استخدام متطابقة مربع مجموع حدين $(a+b)^2 = a^2 + 2ab + b^2$.",
+        text: "ما ناتج مربع التعبير ذي الحدين الآتي في أبسط صورة؟",
+        math: "$(8c + 3d)^{2}$",
+        hint: "تذكر أن الحد الأوسط في مفكوك مربع ذي الحدين يساوي ضعف حاصل ضرب الحد الأول في الثاني.",
+        options: [
+          {
+            text: "$64c^{2} + 24cd + 9d^{2}$",
+            isCorrect: false,
+            rationale: "نسيت ضرب ناتج الحد الأول في الثاني في $2$؛ الحد الأوسط هو $2(8c)(3d) = 48cd$."
+          },
+          {
+            text: "$64c^{2} + 48cd + 9d^{2}$",
+            isCorrect: true,
+            rationale: "أحسنت! مربع الأول $64c^2$، وضعف الأول في الثاني $48cd$، ومربع الثاني $9d^2$."
+          },
+          {
+            text: "$64c^{2} + 9d^{2}$",
+            isCorrect: false,
+            rationale: "التربيع لا يتوزع على الجمع مباشرة؛ لا بد من وجود الحد الأوسط $2ab = 48cd$."
+          },
+          {
+            text: "$16c^{2} + 48cd + 6d^{2}$",
+            isCorrect: false,
+            rationale: "عند تربيع المعاملات نضرب العدد في نفسه ($8^2=64$ و $3^2=9$) ولا نضربه في $2$."
+          }
+        ]
+      },
+      {
+        qNum: 3,
+        outcome: "Q3: إيجاد ناتج ضرب المجموع في الفرق",
+        standard: "المعيار: تطبيق قاعدة ضرب مجموع حدين في الفرق بينهما $(a+b)(a-b) = a^2 - b^2$.",
+        text: "أوجد ناتج ضرب المجموع في الفرق للتعبير الجبري الآتي:",
+        math: "$(3a^{2} + 7b)(3a^{2} - 7b)$",
+        hint: "ربّع الحد الأول بالكامل ثم اطرح منه مربع الحد الثاني بالكامل.",
+        options: [
+          {
+            text: "$9a^{4} + 49b^{2}$",
+            isCorrect: false,
+            rationale: "الإشارة بين المربعين يجب أن تكون سالبة لأن $(+7b)(-7b) = -49b^2$."
+          },
+          {
+            text: "$3a^{4} - 49b^{2}$",
+            isCorrect: false,
+            rationale: "يجب تربيع المعامل العددي $3$ أيضاً ليصبح $3^2 = 9$ بجانب تربيع $a^2$."
+          },
+          {
+            text: "$9a^{4} - 49b^{2}$",
+            isCorrect: true,
+            rationale: "عمل رائع! $(3a^2)^2 - (7b)^2 = 9a^4 - 49b^2$."
+          },
+          {
+            text: "$9a^{4} - 42a^{2}b + 49b^{2}$",
+            isCorrect: false,
+            rationale: "هذا مفكوك مربع الفرق؛ أما هنا فالحدان الأوسطان متعاكسان في الإشارة فيلغي أحدهما الآخر."
+          }
+        ]
+      },
+      {
+        qNum: 4,
+        outcome: "Q4: تحليل كثيرات الحدود باستخدام خاصية التوزيع",
+        standard: "المعيار: تحليل كثيرة حدود رباعية الحدود بالتجميع وإخراج العامل المشترك الأكبر.",
+        text: "حلل كثيرة الحدود الآتية إلى عواملها التامة باستخدام التجميع وخاصية التوزيع:",
+        math: "$xy - 7x + 7y - 49$",
+        hint: "اجمع الحدين الأولين معاً وأخرج $x$ عاملاً مشتركاً، ثم اجمع الحدين الأخيرين وأخرج $7$ عاملاً مشتركاً.",
+        options: [
+          {
+            text: "$(x + 7)(y - 7)$",
+            isCorrect: true,
+            rationale: "ممتاز! بالتجميع نحصل على $x(y - 7) + 7(y - 7) = (x + 7)(y - 7)$."
+          },
+          {
+            text: "$(x - 7)(y + 7)$",
+            isCorrect: false,
+            rationale: "تأكد من الإشارات داخل الأقواس؛ العامل المشترك بين الحدين الأولين هو $(y - 7)$ وليس $(y + 7)$."
+          },
+          {
+            text: "$(x - 7)(y - 7)$",
+            isCorrect: false,
+            rationale: "الحد الثالث $+7y$ موجب، لذا عند أخذ $+7$ عاملاً مشتركاً يكون القوس الأول $(x + 7)$."
+          },
+          {
+            text: "$(x + 7)(y + 7)$",
+            isCorrect: false,
+            rationale: "ضرب $+7 \\times +7$ يعطي $+49$ بينما الحد الثابت في السؤال هو $-49$."
+          }
+        ]
+      },
+      {
+        qNum: 5,
+        outcome: "Q5: تحليل ثلاثيات الحدود ذات الصيغة $x^2 + bx + c$",
+        standard: "المعيار: تحليل ثلاثيات الحدود والقدرة على اكتشاف الأخطاء الجبرية وتبريرها.",
+        text: "حلت سارة ثلاثي الحدود $x^{2} + 6x - 16$ كما يلي: $(x + 4)(x - 4)$. ما الخطأ الرياضي الذي وقعت فيه سارة؟",
+        math: "$x^{2} + 6x - 16 = (x + 4)(x - 4)$",
+        hint: "تحقق من شرطي التحليل: حاصل ضرب العددين يساوي $c$ ومجموعهما يساوي $b$.",
+        options: [
+          {
+            text: "إشارتا الحدين في القوسين يجب أن تكونا موجبتين معاً",
+            isCorrect: false,
+            rationale: "بما أن الحد الثابت $-16$ سالب، فيجب أن تكون الإشارتان مختلفتين، لكن اختيار العددين غير صحيح."
+          },
+          {
+            text: "مجموع الحدين اللذين اختارتهما لا يساوي $6$",
+            isCorrect: true,
+            rationale: "دقيق جداً! مجموع $+4 + (-4) = 0$ وليس $6$؛ التحليل الصحيح هو $(x + 8)(x - 2)$."
+          },
+          {
+            text: "لم تتأكد أن حاصل ضرب الحدين يساوي $-16$",
+            isCorrect: false,
+            rationale: "حاصل ضرب $(+4)(-4)$ يساوي $-16$ بالفعل، لكن الخلل يكمن في مجموعهما الذي لم يحقق الحد الأوسط $6x$."
+          },
+          {
+            text: "استخدمت الحدين الصحيحين ولكن بإشارات معكوسة",
+            isCorrect: false,
+            rationale: "العددان الصحيحان هما $8$ و $-2$، وليس $4$ و $-4$."
+          }
+        ]
+      },
+      {
+        qNum: 6,
+        outcome: "Q6: تحليل ثلاثيات الحدود ذات الصيغة $ax^2 + bx + c$",
+        standard: "المعيار: تحليل ثلاثية حدود بمعامل رئيسي $a \\neq 1$ إلى عاملين خطيين.",
+        text: "حلل كثيرة الحدود الآتية إلى عواملها الأولية:",
+        math: "$3x^{2} - 11x - 20$",
+        hint: "ابحث عن عددين حاصل ضربهما $a \\cdot c = -60$ ومجموعهما $b = -11$، وهما $-15$ و $+4$.",
+        options: [
+          {
+            text: "$(3x - 4)(x + 5)$",
+            isCorrect: false,
+            rationale: "ناتج الحدين الأوسطين هنا $+15x - 4x = +11x$، بينما الحد الأوسط في السؤال سالب ($-11x$)."
+          },
+          {
+            text: "$(3x + 5)(x - 4)$",
+            isCorrect: false,
+            rationale: "ناتج الحدين الأوسطين هنا $-12x + 5x = -7x$ وليس $-11x$."
+          },
+          {
+            text: "$(3x + 4)(x - 5)$",
+            isCorrect: true,
+            rationale: "إجابة صحيحة! الطرفان $-15x$ والوسطان $+4x$ ومجموعهما $-11x$، وحاصل ضرب الثوابت $-20$."
+          },
+          {
+            text: "$(3x - 5)(x + 4)$",
+            isCorrect: false,
+            rationale: "ناتج الحدين الأوسطين هنا $+12x - 5x = +7x$، وهو لا يطابق الحد الأوسط."
+          }
+        ]
+      },
+      {
+        qNum: 7,
+        outcome: "Q7: تحليل المقادير التي تمثل فرق مربعي حدين",
+        standard: "المعيار: إخراج العامل المشترك الأكبر ثم التحليل المتكرر للفرق بين مربعين حتى التبسيط التام.",
+        text: "حلل التعبير الجبري الآتي تحليلاً تاماً:",
+        math: "$2d^{4} - 32f^{4}$",
+        hint: "ابدأ بإخراج العامل المشترك الأكبر $2$ أولاً، ثم حلل الفرق بين مربعين مرتين متتاليتين.",
+        options: [
+          {
+            text: "$2(d - 2f)(d + 2f)(d^{2} + 4f^{2})$",
+            isCorrect: true,
+            rationale: "تحليل نموذجي! بإخراج $2$ نحصل على $2(d^4 - 16f^4) = 2(d^2 - 4f^2)(d^2 + 4f^2)$ ثم نحلل $(d^2 - 4f^2)$."
+          },
+          {
+            text: "$2(d^{2} - 4f^{2})(d^{2} + 4f^{2})$",
+            isCorrect: false,
+            rationale: "التحليل غير مكتمل؛ القوس $(d^2 - 4f^2)$ يمثل فرقاً بين مربعين ويمكن تحليله إلى $(d - 2f)(d + 2f)$."
+          },
+          {
+            text: "$2(d^{2} - 4f^{2})^{2}$",
+            isCorrect: false,
+            rationale: "تحليل الفرق بين مربعين يعطي قوسين مختلفي الإشارة $(a-b)(a+b)$ وليس مربعاً كاملاً."
+          },
+          {
+            text: "$2(d - 2f)^{2}(d + 2f)^{2}$",
+            isCorrect: false,
+            rationale: "مجموع المربعين $(d^2 + 4f^2)$ أولي في الأعداد الحقيقية ولا يُحلل إلى $(d - 2f)(d + 2f)$."
+          }
+        ]
+      },
+      {
+        qNum: 8,
+        outcome: "Q8: قسمة أحاديات الحدود باستخدام خواص الأسس",
+        standard: "المعيار: تطبيق خاصية قوة ناتج القسمة وقوة القوة على البسط والمقام.",
+        text: "بسط التعبير الآتي إلى أبسط صورة (مفترضاً أن المقام لا يساوي صفراً):",
+        math: "$\\left(\\frac{3m^{5}r^{3}}{4p^{8}}\\right)^{4}$",
+        hint: "ارفع المعاملين $3$ و $4$ للقوة $4$، واضرب الأسس الداخلية لكل متغير في الأس الخارجي $4$.",
+        options: [
+          {
+            text: "$\\frac{12m^{20}r^{12}}{16p^{32}}$",
+            isCorrect: false,
+            rationale: "المعاملات تُرفع للأس $4$ ($3^4 = 81$ و $4^4 = 256$) ولا تُضرب في $4$."
+          },
+          {
+            text: "$\\frac{81m^{20}r^{12}}{256p^{32}}$",
+            isCorrect: true,
+            rationale: "ممتاز! $3^4 = 81$، $4^4 = 256$، وضربنا أسس المتغيرات في $4$ فحصلنا على $m^{20}r^{12}$ و $p^{32}$."
+          },
+          {
+            text: "$\\frac{81m^{9}r^{7}}{256p^{12}}$",
+            isCorrect: false,
+            rationale: "عند رفع قوة إلى قوة نضرب الأسس ($5 \\times 4 = 20$) ولا نجمعها."
+          },
+          {
+            text: "$\\frac{81m^{20}r^{12}}{4p^{32}}$",
+            isCorrect: false,
+            rationale: "يجب توزيع الأس الخارجي $4$ على المقام بالكامل بما في ذلك المعامل $4$."
+          }
+        ]
+      },
+      {
+        qNum: 9,
+        outcome: "Q9: تبسيط التعابير التي تتضمن أسساً سالبة وصفرية",
+        standard: "المعيار: تطبيق خاصية الأس الصفري $a^0 = 1$ لأي أساس غير صفري.",
+        text: "ما أبسط صورة للتعبير الجبري الآتي، علماً بأن أياً من المتغيرات لا يساوي صفراً؟",
+        math: "$\\left(-\\frac{4n^{2}q^{5}r^{2}}{9n^{3}q^{2}r}\\right)^{0}$",
+        hint: "انظر إلى الأس الخارجي الذي يشمل القوس كاملاً قبل البدء بتبسيط الكسر الداخلي.",
+        options: [
+          {
+            text: "$0$",
+            isCorrect: false,
+            rationale: "أي مقدار غير صفري مرفوع للأس صفر يساوي $1$ وليس $0$."
+          },
+          {
+            text: "$-1$",
+            isCorrect: false,
+            rationale: "الإشارة السالبة تقع داخل القوس، لذا فهي مشمولة بالأس الصفري ويكون الناتج $+1$."
+          },
+          {
+            text: "$1$",
+            isCorrect: true,
+            rationale: "أحسنت! بما أن القوس بالكامل مرفوع للأس $0$ والأساس لا يساوي صفراً، فإن القيمة تساوي $1$ مباشرة."
+          },
+          {
+            text: "$-\\frac{4q^{3}r}{9n}$",
+            isCorrect: false,
+            rationale: "هذا ناتج تبسيط ما داخل القوس فقط دون تطبيق الأس الخارجي الصفري الذي يجعل القيمة $1$."
+          }
+        ]
+      },
+      {
+        qNum: 10,
+        outcome: "Q10: إيجاد قيمة التعابير التي تتضمن أسساً نسبية وإعادة كتابتها",
+        standard: "المعيار: تحويل الأسس النسبية $a^{m/n} = (\\sqrt[n]{a})^m$ وإيجاد قيمتها العددية.",
+        text: "أوجد قيمة التعبير العددي الآتي في أبسط صورة:",
+        math: "$216^{\\frac{4}{3}}$",
+        hint: "أوجد الجذر التكعيبي للعدد $216$ أولاً، ثم ارفع الناتج للأس $4$.",
+        options: [
+          {
+            text: "$288$",
+            isCorrect: false,
+            rationale: "حدث خلط بضرب $216$ في $\\frac{4}{3}$ بدلاً من التعامل معها كأس نسبي."
+          },
+          {
+            text: "$36$",
+            isCorrect: false,
+            rationale: "$36$ تساوي $6^2$، بينما المطلوب رفع الجذر التكعيبي ($6$) للأس $4$."
+          },
+          {
+            text: "$216$",
+            isCorrect: false,
+            rationale: "$216$ تساوي $6^3$، ويتبقى ضربها في $6$ مرة رابعة للحصول على $6^4$."
+          },
+          {
+            text: "$1296$",
+            isCorrect: true,
+            rationale: "إجابة دقيقة! الجذر التكعيبي لـ $216$ هو $6$، ثم $6^4 = 1296$."
+          }
+        ]
+      },
+      {
+        qNum: 11,
+        outcome: "Q11: تبسيط التعابير الجذرية باستخدام خاصية الضرب للجذور التربيعية",
+        standard: "المعيار: توظيف ضرب التعابير الجذرية في إيجاد مساحة الأشكال الهندسية وتبسيطها.",
+        text: "مثلث قائم الزاوية طول قاعدته $b = 4\\sqrt{3} + \\sqrt{5}$ وارتفاعه $h = 2\\sqrt{3} + \\sqrt{5}$. إذا كانت مساحة المثلث $A = \\frac{1}{2}bh$، فما مساحته في أبسط صورة؟",
+        math: "$A = \\frac{1}{2}(4\\sqrt{3} + \\sqrt{5})(2\\sqrt{3} + \\sqrt{5})$",
+        hint: "اضرب القوسين أولاً بطريقة FOIL وجمّع الحدود المتشابهة، ثم اقسم الناتج على $2$.",
+        options: [
+          {
+            text: "$\\frac{29 + 6\\sqrt{15}}{2}$",
+            isCorrect: true,
+            rationale: "رائع! ناتج ضرب القوسين هو $24 + 4\\sqrt{15} + 2\\sqrt{15} + 5 = 29 + 6\\sqrt{15}$، وبقسمته على $2$ نحصل على المساحة."
+          },
+          {
+            text: "$29 + 6\\sqrt{15}$",
+            isCorrect: false,
+            rationale: "هذا حاصل ضرب القاعدة في الارتفاع فقط؛ لا تنسَ الضرب في $\\frac{1}{2}$ حسب قانون مساحة المثلث."
+          },
+          {
+            text: "$\\frac{13 + 6\\sqrt{15}}{2}$",
+            isCorrect: false,
+            rationale: "عند ضرب $4\\sqrt{3} \\cdot 2\\sqrt{3}$ نحصل على $8 \\times 3 = 24$ وليس $8$."
+          },
+          {
+            text: "$\\frac{29 + 8\\sqrt{15}}{2}$",
+            isCorrect: false,
+            rationale: "معامل الجذر $\\sqrt{15}$ هو مجموع $4 + 2 = 6$ وليس حاصل ضربهما $8$."
+          }
+        ]
+      },
+      {
+        qNum: 12,
+        outcome: "Q12: تبسيط التعابير الجذرية باستخدام خاصية القسمة للجذور التربيعية",
+        standard: "المعيار: تبسيط الجذور التربيعية للكسور وإنطاق المقام للتخلص من الجذر في المقام.",
+        text: "بسط التعبير الجذري الآتي إلى أبسط صورة (مفترضاً أن المتغير موجب):",
+        math: "$\\sqrt{\\frac{27}{m^{5}}}$",
+        hint: "أخرج المربعات الكاملة ($9$ من البسط و $m^4$ من المقام)، ثم انطق المقام بالضرب في $\\frac{\\sqrt{m}}{\\sqrt{m}}$.",
+        options: [
+          {
+            text: "$\\frac{3\\sqrt{3}}{m^{2}}$",
+            isCorrect: false,
+            rationale: "تبقى $m$ واحدة تحت الجذر في المقام ($m^5 = m^4 \\cdot m$) ويجب إنطاقها."
+          },
+          {
+            text: "$\\frac{3\\sqrt{3m}}{m^{3}}$",
+            isCorrect: true,
+            rationale: "إجابة متقنة! $\\frac{3\\sqrt{3}}{m^2\\sqrt{m}} \\cdot \\frac{\\sqrt{m}}{\\sqrt{m}} = \\frac{3\\sqrt{3m}}{m^3}$."
+          },
+          {
+            text: "$\\frac{3\\sqrt{3m}}{m^{2}}$",
+            isCorrect: false,
+            rationale: "عند إنطاق المقام، ضرب $\\sqrt{m} \\cdot \\sqrt{m} = m$ يرفع أس المقام من $m^2$ إلى $m^3$."
+          },
+          {
+            text: "$\\frac{9\\sqrt{3m}}{m^{3}}$",
+            isCorrect: false,
+            rationale: "الجذر التربيعي للعدد $9$ (العامل المربع في $27$) هو $3$ وليس $9$."
+          }
+        ]
+      },
+      {
+        qNum: 13,
+        outcome: "Q13: جمع وطرح التعابير الجذرية",
+        standard: "المعيار: تبسيط الجذور غير المتشابهة لتوحيد المجذور ثم جمع معاملاتها.",
+        text: "أوجد ناتج التعبير الجذري الآتي في أبسط صورة:",
+        math: "$4\\sqrt{5} + 2\\sqrt{20}$",
+        hint: "حلل العدد $20$ إلى $4 \\times 5$ لتبسيط $\\sqrt{20}$ وجعله مشابهاً لـ $\\sqrt{5}$.",
+        options: [
+          {
+            text: "$6\\sqrt{25}$",
+            isCorrect: false,
+            rationale: "لا يجوز جمع الأعداد الموجودة داخل الجذور التربيعية مباشرة."
+          },
+          {
+            text: "$6\\sqrt{5}$",
+            isCorrect: false,
+            rationale: "عند إخراج $2$ من $\\sqrt{20} = 2\\sqrt{5}$ يجب ضربها في المعامل الخارجي $2$ ليصبح الحد $4\\sqrt{5}$."
+          },
+          {
+            text: "$8\\sqrt{5}$",
+            isCorrect: true,
+            rationale: "ممتاز! $2\\sqrt{20} = 2(2\\sqrt{5}) = 4\\sqrt{5}$، وبجمعه مع $4\\sqrt{5}$ ينتج $8\\sqrt{5}$."
+          },
+          {
+            text: "$12\\sqrt{5}$",
+            isCorrect: false,
+            rationale: "تأكد من معامل الحد الثاني: $2 \\times \\sqrt{4} = 2 \\times 2 = 4$ وليس $8$."
+          }
+        ]
+      },
+      {
+        qNum: 14,
+        outcome: "Q14: حل المعادلات التي تتضمن مربعات كاملة",
+        standard: "المعيار: نمذجة السقوط الحر وحل معادلة تربيعية بأخذ الجذر التربيعي وتقريب الناتج.",
+        text: "سقطت كرة من ارتفاع $205\\text{ ft}$. إذا كانت الصيغة $h = -16t^{2} + h_{0}$ تمثل ارتفاع الكرة بالقدم بعد $t$ ثانية، فما الزمن التقريبي لوصول الكرة إلى الأرض ($h=0$)؟",
+        math: "$0 = -16t^{2} + 205$",
+        hint: "عوض $h = 0$ و $h_0 = 205$، ثم اقسم $205$ على $16$ وخذ الجذر التربيعي الموجب للناتج.",
+        options: [
+          {
+            text: "$3.2\\text{ s}$",
+            isCorrect: false,
+            rationale: "تأكد من الحساب: $\\sqrt{205 / 16} = \\sqrt{12.8125} \\approx 3.58\\text{ s}$."
+          },
+          {
+            text: "$3.6\\text{ s}$",
+            isCorrect: true,
+            rationale: "أحسنت! $t^2 = \\frac{205}{16} = 12.8125$، وبأخذ الجذر التربيعي الموجب نحصل على $t \\approx 3.6\\text{ s}$."
+          },
+          {
+            text: "$12.8\\text{ s}$",
+            isCorrect: false,
+            rationale: "هذه قيمة $t^2$؛ لا تنسَ أخذ الجذر التربيعي لإيجاد قيمة الزمن $t$."
+          },
+          {
+            text: "$3.8\\text{ s}$",
+            isCorrect: false,
+            rationale: "عند تقريب $3.579$ لأقرب جزء من عشرة يكون الناتج $3.6$ وليس $3.8$."
+          }
+        ]
+      },
+      {
+        qNum: 15,
+        outcome: "Q15: تحليل ثلاثيات الحدود المربعة الكاملة إلى العوامل",
+        standard: "المعيار: التحقق من اكتمال التحليل إلى عوامل أولية وعدم التوقف عند عوامل قابلة للتحليل.",
+        text: "قام سعيد ورامي بتحليل التعبير $x^{8} - x^{4}$ كما يلي:\nسعيد: $x^{4}(x^{2} + 1)(x^{2} - 1)$\nرامي: $x^{4}(x^{2} + 1)(x - 1)(x + 1)$\nأي العبارات الآتية تصف صحة حلهما بدقة؟",
+        math: "$x^{8} - x^{4}$",
+        hint: "انظر إلى العامل $(x^2 - 1)$ في إجابة سعيد؛ هل هو في أبسط صورة أم يمثل فرقاً بين مربعين؟",
+        options: [
+          {
+            text: "سعيد فقط على صواب لأن التحليل يتوقف عند القوة الثانية",
+            isCorrect: false,
+            rationale: "التحليل التام يتطلب الاستمرار طالما يوجد فرق بين مربعين مثل $(x^2 - 1)$."
+          },
+          {
+            text: "رامي فقط على صواب وخطوات سعيد خاطئة رياضياً",
+            isCorrect: false,
+            rationale: "خطوات سعيد صحيحة جبرياً (نواتجها متكافئة)، لكن تحليله لم يكتمل بعد."
+          },
+          {
+            text: "كلاهما على صواب في خطواته، ولكن تحليل سعيد غير مكتمل",
+            isCorrect: true,
+            rationale: "استنتاج دقيق! سعيد وصل لمرحلة صحيحة لكن رامي أكمل تحليل $(x^2 - 1)$ إلى $(x - 1)(x + 1)$."
+          },
+          {
+            text: "كلاهما غير صحيح لأن $x^4$ يجب تحليلها أيضاً",
+            isCorrect: false,
+            rationale: "أحادي الحد $x^4$ يعتبر في أبسط صورة كعامل مشترك أكبر ولا يُفكك."
+          }
+        ]
+      },
+      {
+        qNum: 16,
+        outcome: "Q16: حل المعادلات التي تتضمن تعابير بأسس نسبية",
+        standard: "المعيار: توحيد الأساسات في المعادلات الأسية ومساواة الأسس لإيجاد قيمة المجهول.",
+        text: "ما قيمة $x$ التي تحقق المعادلة الأسية الآتية؟",
+        math: "$4^{2x + 1} = 1024$",
+        hint: "اكتب العدد $1024$ على صورة قوة للأساس $4$ ($4^5 = 1024$)، ثم ساوي الأسس.",
+        options: [
+          {
+            text: "$x = 1$",
+            isCorrect: false,
+            rationale: "بالتعويض بـ $x=1$ نحصل على $4^3 = 64$ وليس $1024$."
+          },
+          {
+            text: "$x = \\frac{3}{2}$",
+            isCorrect: false,
+            rationale: "حدث خطأ عند حل $2x + 1 = 5$؛ بطرح $1$ نحصل على $2x = 4$ وليس $3$."
+          },
+          {
+            text: "$x = 2$",
+            isCorrect: true,
+            rationale: "عمل رائع! بما أن $1024 = 4^5$، فإن $2x + 1 = 5 \\Rightarrow 2x = 4 \\Rightarrow x = 2$."
+          },
+          {
+            text: "$x = \\frac{5}{2}$",
+            isCorrect: false,
+            rationale: "نسيت طرح $1$ من الطرف الأيمن قبل القسمة على $2$."
+          }
+        ]
+      },
+      {
+        qNum: 17,
+        outcome: "Q17: إيجاد نواتج الضرب والقسمة للأعداد بالترميز العلمي",
+        standard: "المعيار: قسمة الأعداد بالترميز العلمي وطرح الأسس مع ضبط الصيغة القياسية للترميز.",
+        text: "أوجد ناتج القسمة الآتي معبراً عنه بالترميز العلمي:",
+        math: "$\\frac{1.445 \\times 10^{-7}}{1.7 \\times 10^{5}}$",
+        hint: "اقسم $1.445$ على $1.7$، واطرح الأسس $(-7 - 5)$، ثم حرك الفاصلة العشرية لليمين منزلة واحدة.",
+        options: [
+          {
+            text: "$8.5 \\times 10^{-13}$",
+            isCorrect: true,
+            rationale: "ممتاز! $\\frac{1.445}{1.7} = 0.85$، والأس هو $-7 - 5 = -12$، وبتحريك الفاصلة يصبح $8.5 \\times 10^{-13}$."
+          },
+          {
+            text: "$8.5 \\times 10^{-11}$",
+            isCorrect: false,
+            rationale: "عند تحريك الفاصلة العشرية من $0.85$ إلى $8.5$ نطرح $1$ من الأس ($-12 - 1 = -13$) ولا نضيف $1$."
+          },
+          {
+            text: "$8.5 \\times 10^{-3}$",
+            isCorrect: false,
+            rationale: "عند القسمة نطرح أس المقام ($-7 - 5 = -12$) ولا نجمع الأسس ($-7 + 5 = -2$)."
+          },
+          {
+            text: "$0.85 \\times 10^{-12}$",
+            isCorrect: false,
+            rationale: "القيمة صحيحة عددياً لكنها ليست بالترميز العلمي لأن المعامل $0.85$ أصغر من $1$."
+          }
+        ]
+      },
+      {
+        qNum: 18,
+        outcome: "Q18: كتابة كثيرات الحدود بالصيغة القياسية",
+        standard: "المعيار: ترتيب حدود كثيرة الحدود تنازلياً حسب الدرجة وتحديد المعامل الرئيسي.",
+        text: "عند كتابة كثيرة الحدود الآتية بالصيغة القياسية، ما المعامل الرئيسي لها؟",
+        math: "$-y^{3} + 3y - 3y^{2} + 2$",
+        hint: "المعامل الرئيسي هو معامل الحد ذي الأس الأكبر للمتغير $y$.",
+        options: [
+          {
+            text: "$3$",
+            isCorrect: false,
+            rationale: "$3$ هو معامل الحد من الدرجة الأولى ($3y$)، بينما أعلى درجة هنا هي الثالثة."
+          },
+          {
+            text: "$-3$",
+            isCorrect: false,
+            rationale: "$-3$ هو معامل الحد التربيعي ($-3y^2$)، وليس الحد التكعيبي."
+          },
+          {
+            text: "$-1$",
+            isCorrect: true,
+            rationale: "دقيق! بالصيغة القياسية تكون $-y^3 - 3y^2 + 3y + 2$، ومعامل الحد الأعلى درجة ($-y^3$) هو $-1$."
+          },
+          {
+            text: "$2$",
+            isCorrect: false,
+            rationale: "$2$ هو الحد الثابت (من الدرجة الصفرية) وليس المعامل الرئيسي."
+          }
+        ]
+      },
+      {
+        qNum: 19,
+        outcome: "Q19: حل المعادلات التربيعية ذات الصيغة $ax^2 + bx = 0$",
+        standard: "المعيار: تطبيق خاصية الضرب الصفري لحل المعادلات التربيعية المحللة إلى عوامل.",
+        text: "ما مجموعة الحل للمعادلة التربيعية الآتية؟",
+        math: "$(4m + 2)(3m - 9) = 0$",
+        hint: "ساوِ كل قوس بالصفر على حدة: $4m + 2 = 0$ و $3m - 9 = 0$.",
+        options: [
+          {
+            text: "$\\left\\{-\\frac{1}{2}, 3\\right\\}$",
+            isCorrect: true,
+            rationale: "إجابة صحيحة! من $4m + 2 = 0$ ينتج $m = -\\frac{2}{4} = -\\frac{1}{2}$، ومن $3m - 9 = 0$ ينتج $m = 3$."
+          },
+          {
+            text: "$\\left\\{\\frac{1}{2}, -3\\right\\}$",
+            isCorrect: false,
+            rationale: "حدث عكس للإشارات عند نقل الحدود الثابتة إلى الطرف الآخر من المعادلة."
+          },
+          {
+            text: "$\\left\\{-2, 3\\right\\}$",
+            isCorrect: false,
+            rationale: "في القوس الأول، لا تنسَ القسمة على معامل $m$ ($4$) بعد نقل $+2$."
+          },
+          {
+            text: "$\\left\\{-\\frac{1}{2}, -3\\right\\}$",
+            isCorrect: false,
+            rationale: "حل القوس الثاني $3m - 9 = 0$ يعطي $+3$ وليس $-3$."
+          }
+        ]
+      },
+      {
+        qNum: 20,
+        outcome: "Q20: حل المعادلات ذات الصيغة $x^2 + bx + c = 0$",
+        standard: "المعيار: تصفير المعادلة التربيعية ثم تحليلها وإيجاد جذريها.",
+        text: "أوجد مجموعة الحل للمعادلة التربيعية الآتية:",
+        math: "$x^{2} - 6x = 27$",
+        hint: "انقل $27$ إلى الطرف الأيسر لتصبح $x^2 - 6x - 27 = 0$، ثم حللها إلى عاملين.",
+        options: [
+          {
+            text: "$\\{3, -9\\}$",
+            isCorrect: false,
+            rationale: "هذان هما الثابتان داخل القوسين $(x + 3)(x - 9) = 0$، وتُعكس إشارتهما عند إيجاد الجذور."
+          },
+          {
+            text: "$\\{-3, 9\\}$",
+            isCorrect: true,
+            rationale: "ممتاز! بالتحليل $(x - 9)(x + 3) = 0$، فتكون مجموعة الحل $\\{-3, 9\\}$."
+          },
+          {
+            text: "$\\{3, 9\\}$",
+            isCorrect: false,
+            rationale: "بما أن الحد الثابت $-27$ سالب، يجب أن يكون أحد الجذرين سالباً والآخر موجباً."
+          },
+          {
+            text: "$\\{-3, -9\\}$",
+            isCorrect: false,
+            rationale: "مجموع الجذرين يجب أن يساوي $+6$ (عكس معامل $x$) وليس $-12$."
+          }
+        ]
+      }
+    ];
+
+    let currentIndex = 0;
+    let userAnswers = new Array(quizData.length).fill(null);
+    let timerInterval = null;
+    let secondsElapsed = 0;
+
+    // تفعيل عرض المعادلات الرياضية عبر KaTeX
+    function renderMath() {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false
+        });
+      }
+    }
+
+    function startQuiz() {
+      document.getElementById('start-screen').classList.add('hidden');
+      document.getElementById('quiz-screen').classList.remove('hidden');
+      
+      currentIndex = 0;
+      userAnswers = new Array(quizData.length).fill(null);
+      secondsElapsed = 0;
+      
+      startTimer();
+      buildNavDots();
+      loadQuestion(0);
+    }
+
+    function startTimer() {
+      clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        secondsElapsed++;
+        const mins = String(Math.floor(secondsElapsed / 60)).padStart(2, '0');
+        const secs = String(secondsElapsed % 60).padStart(2, '0');
+        document.getElementById('timer-display').textContent = `${mins}:${secs}`;
+      }, 1000);
+    }
+
+    function buildNavDots() {
+      const container = document.getElementById('question-nav-dots');
+      container.innerHTML = '';
+      quizData.forEach((q, idx) => {
+        const btn = document.createElement('button');
+        btn.id = `nav-dot-${idx}`;
+        btn.textContent = idx + 1;
+        btn.onclick = () => loadQuestion(idx);
+        btn.className = "w-7 h-7 rounded-lg text-xs font-bold border transition-all cursor-pointer flex items-center justify-center bg-slate-50 text-slate-600 border-slate-300 hover:bg-slate-200";
+        container.appendChild(btn);
+      });
+    }
+
+    function updateNavDots() {
+      quizData.forEach((q, idx) => {
+        const dot = document.getElementById(`nav-dot-${idx}`);
+        if (!dot) return;
+        
+        let baseClass = "w-7 h-7 rounded-lg text-xs font-bold border transition-all cursor-pointer flex items-center justify-center ";
+        if (idx === currentIndex) {
+          baseClass += "ring-2 ring-[#0f4c81] ring-offset-1 ";
+        }
+        
+        if (userAnswers[idx] !== null) {
+          const isCorrect = q.options[userAnswers[idx]].isCorrect;
+          baseClass += isCorrect 
+            ? "bg-emerald-500 text-white border-emerald-600" 
+            : "bg-rose-500 text-white border-rose-600";
+        } else {
+          baseClass += idx === currentIndex 
+            ? "bg-[#0f4c81] text-white border-[#0f4c81]" 
+            : "bg-slate-50 text-slate-600 border-slate-300 hover:bg-slate-200";
+        }
+        dot.className = baseClass;
+      });
+    }
+
+    function loadQuestion(index) {
+      currentIndex = index;
+      const q = quizData[index];
+      
+      // تحديث الترويسة وشريط التقدم
+      document.getElementById('q-badge').textContent = `السؤال ${index + 1} من ${quizData.length}`;
+      document.getElementById('outcome-tag').textContent = q.outcome;
+      document.getElementById('progress-bar').style.width = `${((index + 1) / quizData.length) * 100}%`;
+      
+      // تحديث نص السؤال والمعادلة
+      document.getElementById('question-text').textContent = q.text;
+      const mathDiv = document.getElementById('question-math');
+      if (q.math) {
+        mathDiv.innerHTML = q.math;
+        mathDiv.classList.remove('hidden');
+      } else {
+        mathDiv.classList.add('hidden');
+      }
+
+      // إعادة ضبط التلميح
+      const hintBox = document.getElementById('hint-box');
+      hintBox.classList.add('hidden');
+      hintBox.innerHTML = `<strong>تلميح:</strong> ${q.hint}`;
+
+      // بناء الخيارات
+      const optionsContainer = document.getElementById('options-container');
+      optionsContainer.innerHTML = '';
+      const letters = ['أ', 'ب', 'ج', 'د'];
+      const answeredIndex = userAnswers[index];
+
+      q.options.forEach((opt, optIdx) => {
+        const btn = document.createElement('button');
+        btn.disabled = answeredIndex !== null;
+        btn.onclick = () => selectOption(optIdx);
+
+        let cardStyle = "option-card w-full text-right p-4 rounded-xl border-2 flex items-center gap-3 cursor-pointer ";
+        let letterStyle = "w-8 h-8 rounded-lg flex items-center justify-center font-extrabold text-sm shrink-0 ";
+
+        if (answeredIndex === null) {
+          cardStyle += "bg-white border-slate-200 hover:border-[#0f4c81] hover:bg-blue-50/40 text-slate-800";
+          letterStyle += "bg-slate-100 text-slate-700";
+        } else {
+          btn.classList.remove('cursor-pointer');
+          if (opt.isCorrect) {
+            cardStyle += "bg-emerald-50 border-emerald-500 text-emerald-950 shadow-sm";
+            letterStyle += "bg-emerald-600 text-white";
+          } else if (optIdx === answeredIndex && !opt.isCorrect) {
+            cardStyle += "bg-rose-50 border-rose-500 text-rose-950";
+            letterStyle += "bg-rose-600 text-white";
+          } else {
+            cardStyle += "bg-slate-50 border-slate-200 text-slate-400 opacity-70";
+            letterStyle += "bg-slate-200 text-slate-500";
+          }
+        }
+
+        btn.className = cardStyle;
+        btn.innerHTML = `
+          <span class="${letterStyle}">${letters[optIdx]}</span>
+          <span class="font-semibold text-base leading-snug flex-grow">${opt.text}</span>
+        `;
+        optionsContainer.appendChild(btn);
+      });
+
+      // عرض التغذية الراجعة إذا تمت الإجابة
+      const feedbackBox = document.getElementById('feedback-box');
+      if (answeredIndex !== null) {
+        showFeedback(q, answeredIndex);
+      } else {
+        feedbackBox.classList.add('hidden');
+      }
+
+      // تحديث أزرار التنقل
+      document.getElementById('prev-btn').disabled = index === 0;
+      document.getElementById('next-btn-text').textContent = index === quizData.length - 1 ? "إنهاء وعرض التقرير" : "السؤال التالي";
+      
+      updateNavDots();
+      renderMath();
+    }
+
+    function selectOption(optIdx) {
+      if (userAnswers[currentIndex] !== null) return;
+      userAnswers[currentIndex] = optIdx;
+      
+      // تحديث عداد النقاط
+      const score = userAnswers.reduce((acc, ans, idx) => {
+        if (ans !== null && quizData[idx].options[ans].isCorrect) return acc + 1;
+        return acc;
+      }, 0);
+      document.getElementById('score-counter').textContent = score;
+
+      loadQuestion(currentIndex);
+    }
+
+    function showFeedback(q, optIdx) {
+      const selectedOpt = q.options[optIdx];
+      const feedbackBox = document.getElementById('feedback-box');
+      const feedbackIcon = document.getElementById('feedback-icon');
+      const feedbackTitle = document.getElementById('feedback-title');
+      const feedbackText = document.getElementById('feedback-text');
+      const feedbackStandard = document.getElementById('feedback-standard');
+
+      feedbackBox.classList.remove('hidden', 'bg-emerald-50', 'border-emerald-300', 'text-emerald-900', 'bg-rose-50', 'border-rose-300', 'text-rose-900');
+
+      if (selectedOpt.isCorrect) {
+        feedbackBox.classList.add('bg-emerald-50', 'border-emerald-300', 'text-emerald-900');
+        feedbackIcon.innerHTML = `<svg class="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+        feedbackTitle.textContent = "إجابة صحيحة — أحسنت!";
+      } else {
+        feedbackBox.classList.add('bg-rose-50', 'border-rose-300', 'text-rose-900');
+        feedbackIcon.innerHTML = `<svg class="w-6 h-6 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+        feedbackTitle.textContent = "إجابة غير صحيحة — راجع التغذية الراجعة التشخيصية:";
+      }
+
+      feedbackText.innerHTML = selectedOpt.rationale;
+      feedbackStandard.textContent = q.standard;
+    }
+
+    function toggleHint() {
+      const hintBox = document.getElementById('hint-box');
+      hintBox.classList.toggle('hidden');
+      renderMath();
+    }
+
+    function prevQuestion() {
+      if (currentIndex > 0) {
+        loadQuestion(currentIndex - 1);
+      }
+    }
+
+    function nextQuestion() {
+      if (currentIndex < quizData.length - 1) {
+        loadQuestion(currentIndex + 1);
+      } else {
+        finishQuiz();
+      }
+    }
+
+    function finishQuiz() {
+      clearInterval(timerInterval);
+      document.getElementById('quiz-screen').classList.add('hidden');
+      document.getElementById('result-screen').classList.remove('hidden');
+
+      const studentName = document.getElementById('student-name').value.trim();
+      document.getElementById('result-student-name').textContent = studentName 
+        ? `تقرير إنجاز الطالب: ${studentName}` 
+        : "تقرير إنجاز الطالب — الصف العاشر العام";
+
+      let score = 0;
+      userAnswers.forEach((ans, idx) => {
+        if (ans !== null && quizData[idx].options[ans].isCorrect) {
+          score++;
+        }
+      });
+
+      const percentage = Math.round((score / quizData.length) * 100);
+      document.getElementById('final-score').textContent = score;
+      document.getElementById('final-percentage').textContent = `النسبة المئوية: ${percentage}%`;
+
+      // تحديد مستوى الإتقان وفق المعايير الوزارية
+      const badge = document.getElementById('mastery-badge');
+      const title = document.getElementById('mastery-title');
+      const advice = document.getElementById('mastery-advice');
+
+      if (percentage >= 85) {
+        badge.className = "text-xs font-extrabold px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300";
+        badge.textContent = "إتقان متقدم (A)";
+        title.textContent = "أداء متميز يفوق التوقعات!";
+        advice.textContent = "أظهرت تمكناً عالياً في جميع مهارات التحليل الجبري، والأسس النسبية، والتعابير الجذرية، وحل المعادلات التربيعية. استمر بهذا المستوى الرائع استعداداً للاختبار النهائي.";
+      } else if (percentage >= 70) {
+        badge.className = "text-xs font-extrabold px-3 py-1 rounded-full bg-blue-100 text-blue-800 border border-blue-300";
+        badge.textContent = "إتقان جيد جداً (B)";
+        title.textContent = "أداء قوي ومبشر بالتميز";
+        advice.textContent = "تمتلك أساساً متيناً في معظم نواتج التعلم، ويُنصح بمراجعة الأسئلة التي أخطأت فيها أدناه (خاصة خطوات التحليل التام وإنطاق المقام) للوصول إلى الدرجة الكاملة.";
+      } else if (percentage >= 50) {
+        badge.className = "text-xs font-extrabold px-3 py-1 rounded-full bg-amber-100 text-amber-800 border border-amber-300";
+        badge.textContent = "إتقان مقبول (C)";
+        title.textContent = "يحتاج إلى تعزيز وتدريب إضافي";
+        advice.textContent = "حققت الحد الأساسي من المهارات، لكنك بحاجة إلى مراجعة قواعد الإشارات في ضرب وتحليل كثيرات الحدود، وقوانين الأسس، وحل تمارين المذكرة بتركيز أكبر.";
+      } else {
+        badge.className = "text-xs font-extrabold px-3 py-1 rounded-full bg-rose-100 text-rose-800 border border-rose-300";
+        badge.textContent = "دون مستوى الإتقان (يحتاج دعماً)";
+        title.textContent = "خطة علاجية مقترحة قبل الاختبار";
+        advice.textContent = "ننصحك بمراجعة المفاهيم الأساسية في المذكرة خطوة بخطوة مع معلمة المادة أ. خديجة أحمد علي، والتركيز على التغذية الراجعة لكل سؤال ثم إعادة المحاولة.";
+      }
+
+      // بناء التقرير التشخيصي التفصيلي
+      const reportContainer = document.getElementById('detailed-report');
+      reportContainer.innerHTML = '';
+
+      quizData.forEach((q, idx) => {
+        const ansIdx = userAnswers[idx];
+        const isSkipped = ansIdx === null;
+        const isCorrect = !isSkipped && q.options[ansIdx].isCorrect;
+        const correctOpt = q.options.find(o => o.isCorrect);
+
+        const item = document.createElement('div');
+        item.className = `p-3.5 rounded-xl border ${isCorrect ? 'bg-emerald-50/50 border-emerald-200' : 'bg-rose-50/50 border-rose-200'}`;
+        
+        item.innerHTML = `
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+            <span class="text-xs font-extrabold text-slate-700">${q.outcome}</span>
+            <span class="text-xs font-bold px-2.5 py-0.5 rounded-md ${isCorrect ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}">
+              ${isCorrect ? '✓ متقن' : (isSkipped ? 'لم يُجب' : '✗ يحتاج مراجعة')}
+            </span>
+          </div>
+          <p class="text-xs text-slate-600 mb-1.5">${q.text} <span class="font-bold text-slate-800">${q.math}</span></p>
+          <div class="text-xs space-y-1">
+            <p><span class="font-bold text-emerald-700">الإجابة الصحيحة:</span> ${correctOpt.text}</p>
+            ${!isCorrect && !isSkipped ? `<p><span class="font-bold text-rose-700">إجابتك:</span> ${q.options[ansIdx].text} — <span class="text-slate-600">${q.options[ansIdx].rationale}</span></p>` : ''}
+          </div>
+        `;
+        reportContainer.appendChild(item);
+      });
+
+      renderMath();
+    }
+
+    function restartQuiz() {
+      document.getElementById('result-screen').classList.add('hidden');
+      document.getElementById('start-screen').classList.remove('hidden');
+    }
+
+    // تهيئة أولية عند تحميل الصفحة
+    window.addEventListener('DOMContentLoaded', renderMath);
+  </script>
+</body>
+</html>
